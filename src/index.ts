@@ -90,8 +90,8 @@ const defaultOptions: Options = {
 export class Logger {
     options: Options;
     fileWriter: any;
-    constructor(public category: string, options: Options) {
-        let opts = {} as Partial<Options>;
+    constructor(public category: string, options: Partial<Options>) {
+        let opts = {};
         Object.assign(opts, defaultOptions);
         Object.assign(opts, options);
         this.options = opts as Options;
