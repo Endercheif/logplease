@@ -329,7 +329,7 @@ export const setLogLevel = (level: LogLevel) => {
 export const setLogfile = (filename: string) => {
     GlobalLogfile = filename;
 };
-export const create = (category: string, options: Options): Logger => {
+export const create = (category: string, options: Partial<Options>): Logger => {
     return new Logger(category, options);
 };
 export const forceBrowserMode = (force: boolean) => (isNodejs = !force); // for testing,
