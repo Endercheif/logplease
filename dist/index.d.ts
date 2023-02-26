@@ -2,7 +2,7 @@
 /// <reference types="node" />
 import { format } from 'node:util';
 import { EventEmitter } from 'node:events';
-declare const LogLevels: {
+export declare const LogLevels: {
     readonly DEBUG: "DEBUG";
     readonly INFO: "INFO";
     readonly WARN: "WARN";
@@ -55,19 +55,14 @@ export declare class Logger {
     info(...args: Parameters<typeof format>): void;
     warn(...args: Parameters<typeof format>): void;
     error(...args: Parameters<typeof format>): void;
-    _write(level: LogLevel, text: string): void;
-    _format(level: LogLevel, text: string): {
-        timestamp: string;
-        level: string;
-        category: string;
-        text: string;
-    };
-    _createLogMessage(level: LogLevel, text: string, timestampFormat?: string, levelFormat?: string, categoryFormat?: string, textFormat?: string): string;
-    _shouldLog(level: LogLevel): boolean;
+    private _write;
+    private _format;
+    private _createLogMessage;
+    private _shouldLog;
 }
 export declare const setLogLevel: (level: LogLevel) => void;
 export declare const setLogfile: (filename: string) => void;
-export declare const create: (category: any, options: Options) => Logger;
+export declare const create: (category: string, options: Options) => Logger;
 export declare const forceBrowserMode: (force: boolean) => boolean;
 export declare const events: EventEmitter;
 export {};

@@ -8,7 +8,7 @@ import { EventEmitter } from 'node:events';
 let isElectronRenderer = process.type && process.type === 'renderer';
 let isNodejs = !isElectronRenderer && process.version ? true : false;
 
-const LogLevels = {
+export const LogLevels = {
     DEBUG: 'DEBUG',
     INFO: 'INFO',
     WARN: 'WARN',
