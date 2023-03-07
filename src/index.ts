@@ -90,7 +90,7 @@ const defaultOptions: Options = {
 export class Logger {
     options: Options;
     fileWriter: any;
-    constructor(public category: string, options: Partial<Options>) {
+    constructor(public category: string, options: Partial<Options> = {}) {
         let opts = {};
         Object.assign(opts, defaultOptions);
         Object.assign(opts, options);
@@ -329,7 +329,7 @@ export const setLogLevel = (level: LogLevel) => {
 export const setLogfile = (filename: string) => {
     GlobalLogfile = filename;
 };
-export const create = (category: string, options: Partial<Options>): Logger => {
+export const create = (category: string, options: Partial<Options> = {}): Logger => {
     return new Logger(category, options);
 };
 export const forceBrowserMode = (force: boolean) => (isNodejs = !force); // for testing,

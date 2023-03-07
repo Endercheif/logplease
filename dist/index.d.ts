@@ -1,5 +1,5 @@
-/// <reference types="node" />
-/// <reference types="node" />
+/// <reference types="node" resolution-mode="require"/>
+/// <reference types="node" resolution-mode="require"/>
 import { format } from 'node:util';
 import { EventEmitter } from 'node:events';
 export declare const LogLevels: {
@@ -49,7 +49,7 @@ export declare class Logger {
     category: string;
     options: Options;
     fileWriter: any;
-    constructor(category: string, options: Partial<Options>);
+    constructor(category: string, options?: Partial<Options>);
     debug(...args: Parameters<typeof format>): void;
     log(...args: Parameters<typeof format>): void;
     info(...args: Parameters<typeof format>): void;
@@ -62,7 +62,7 @@ export declare class Logger {
 }
 export declare const setLogLevel: (level: LogLevel) => void;
 export declare const setLogfile: (filename: string) => void;
-export declare const create: (category: string, options: Partial<Options>) => Logger;
+export declare const create: (category: string, options?: Partial<Options>) => Logger;
 export declare const forceBrowserMode: (force: boolean) => boolean;
 export declare const events: EventEmitter;
 export {};

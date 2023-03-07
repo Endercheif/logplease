@@ -67,7 +67,7 @@ export class Logger {
     category;
     options;
     fileWriter;
-    constructor(category, options) {
+    constructor(category, options = {}) {
         this.category = category;
         let opts = {};
         Object.assign(opts, defaultOptions);
@@ -229,7 +229,7 @@ export const setLogLevel = (level) => {
 export const setLogfile = (filename) => {
     GlobalLogfile = filename;
 };
-export const create = (category, options) => {
+export const create = (category, options = {}) => {
     return new Logger(category, options);
 };
 export const forceBrowserMode = (force) => (isNodejs = !force); // for testing,

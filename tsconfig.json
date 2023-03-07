@@ -3,7 +3,7 @@
         "src/**/*.ts"
     ],
     "compilerOptions": {
-        "module": "ESNext",
+        "module": "ES2022",
         "target": "ESNext",
         "declaration": true,
         "outDir": "dist",
@@ -16,6 +16,7 @@
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "noUnusedLocals": true,
-        "noUnusedParameters": true
+        "noUnusedParameters": true,
+        "moduleResolution": "nodenext"
     }
 }
